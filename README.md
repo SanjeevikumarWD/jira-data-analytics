@@ -54,3 +54,76 @@ The data is organized into a star schema to optimize analytical queries:
 - Python Packages: Install via pip:
   ```bash
   pip install pandas psycopg2-binary requests
+Database Setup: Create a PostgreSQL database named jira_db
+
+## Setup
+
+Clone the Repository:
+bashgit clone <repository-url>
+cd jira-ticket-analytics
+
+## Configure PostgreSQL:
+
+Ensure PostgreSQL is running
+Update the connection details in the script:
+pythonconn = psycopg2.connect(
+    user="postgres",
+    password="your_password",
+    host="127.0.0.1",
+    port="5432",
+    database="jira_db"
+)
+
+
+
+Install Dependencies:
+bashpip install -r requirements.txt
+
+Run the Script:
+bashpython jira_pipeline.py
+
+
+## 📊 Usage
+The script executes the ETL pipeline and prints analytical results:
+
+### Ticket Aging Analysis:
+Counts open tickets older than 30 days by project
+### User Productivity: 
+Ranks users by average resolution days for closed tickets
+### Priority Distribution:
+Shows ticket counts by project, priority, and status
+### Monthly Trends:
+Tracks ticket creation by project and month
+
+Output is displayed in the console, and data is stored in the jira_db database for further querying.
+Sample Output
+Connected to PostgreSQL
+
+1. Ticket Aging Analysis (Open > 30 days):
+[('Jira', 10), ('Confluence', 8)]
+
+2. User Productivity (Rank by Avg Resolution):
+[('User_101', 5, 12.5, 1), ('User_102', 3, 15.0, 2)]
+
+3. Priority Distribution by Project:
+[('Jira', 'High', 'Open', 20), ('Jira', 'Medium', 'Closed', 15), ...]
+
+4. Monthly Ticket Creation Trends:
+[('Jira', 2025, 1, 50), ('Confluence', 2025, 2, 30), ...]
+
+PostgreSQL connection closed.
+
+## 📁 Project Structure
+jira-ticket-analytics/
+├── jira_pipeline.py      # Main ETL and analytics script
+├── requirements.txt      # Python dependencies
+├── README.md            # Project documentation
+
+## 🔮 Future Improvements
+
+Add PySpark for big data processing (e.g., aggregate tickets at scale)
+Integrate Airflow for scheduling the pipeline
+Store data in a cloud warehouse (e.g., AWS Redshift) for production use
+
+## 👨‍💻 Author
+Sanjeevikumar - Aspiring Data Engineer passionate about building efficient data pipelines.
