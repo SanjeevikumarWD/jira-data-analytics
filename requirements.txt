@@ -1,3 +1,4 @@
+requirements
 Python 3.8+: For ETL scripting and data manipulation
 Pandas: For data transformation and aggregation
 PostgreSQL: For data storage and analytics
