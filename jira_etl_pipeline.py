@@ -5,7 +5,7 @@ from psycopg2 import Error
 from datetime import datetime, timedelta
 import random
 
-# Set up PostgreSQL connection
+# Set up PostgreSQL connection dummy
 try:
     conn = psycopg2.connect(
         user="postgres",
@@ -183,4 +183,5 @@ finally:
     if conn:
         cursor.close()
         conn.close()
+
         print("PostgreSQL connection closed.")
