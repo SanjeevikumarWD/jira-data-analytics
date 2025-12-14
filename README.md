@@ -12,7 +12,7 @@
 
 ## 🌟 Overview
 
-This project implements an ETL pipeline to process and analyze mock Jira ticket data, mimicking real-world data engineering tasks for Atlassian's Jira platform. The pipeline extracts data from a public API, transforms it into a star schema for efficient analytics, loads it into a PostgreSQL database, and generates insights through advanced SQL queries.
+This project implements an ETL pipeline to process and analyze mock Jira ticket data, mimicking real-world data engineering tasks for Atlassian's Jira platform.. The pipeline extracts data from a public API, transforms it into a star schema for efficient analytics, loads it into a PostgreSQL database, and generates insights through advanced SQL queries.
 
 ## ✨ Features
 
